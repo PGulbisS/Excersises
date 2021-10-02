@@ -19,11 +19,11 @@ namespace Exercises.Level1
         /// </summary>
         public bool CigarParty(int cigars, bool isWeekend)
         {
-            if (cigars >= 40 && cigars <= 60) 
+            if (cigars >= 40 && cigars <= 60)
             {
                 return true;
             }
-            if (cigars >= 40 && isWeekend) 
+            if (cigars >= 40 && isWeekend)
             {
                 return true;
             }
@@ -50,11 +50,11 @@ namespace Exercises.Level1
 
             }
 
-            if (you >= 8 || date >= 8) 
+            if (you >= 8 || date >= 8)
             {
                 return 2;
             }
-   
+
             return 1;
 
         }
@@ -71,14 +71,14 @@ namespace Exercises.Level1
         /// </summary>
         public bool SquirrelPlay(int temp, bool isSummer)
         {
-            if (temp >= 60 && temp <= 90) 
+            if (temp >= 60 && temp <= 90)
             {
                 return true;
 
             }
-            if (temp > 90 && temp <= 100 && isSummer ) 
+            if (temp > 90 && temp <= 100 && isSummer)
             {
-                return true; 
+                return true;
             }
 
             return false;
@@ -97,35 +97,36 @@ namespace Exercises.Level1
         /// </summary>
         public int CaughtSpeeding(int speed, bool isBirthday)
         {
-            if (speed <= 60) 
+            if (!(isBirthday))
             {
-                return 0;
+                if (speed <= 60)
+                {
+                    return 0;
+                }
+                if (speed > 60 && speed <= 80)
+                {
+                    return 1;
+                }
+                else
+                {
+                    return 2;
+                }
 
             }
-            else if (speed <= 60 || isBirthday) 
-            {
-                return 1;
-            }
-            if (speed >= 61 && speed <= 80)
-            {
-                return 1;
-            }
-            else if (speed >= 61 && speed <= 80 || isBirthday) 
+            else if (speed <= 65)
             {
                 return 0;
             }
-            if (speed >= 81) 
+            else if (speed > 65 && speed <= 85)
+            {
+                return 1;
+            }
+            else 
             {
                 return 2;
             }
-            else if (speed >=81 && isBirthday) 
-            {
-                return 0;
-            }
-            return 2;
 
-
-        }
+        }   
 
         /// <summary>
         /// Given 2 ints, a and b, return their sum. However, sums in the range 10..19 inclusive, are
@@ -137,27 +138,17 @@ namespace Exercises.Level1
         /// </summary>
         public int SortaSum(int a, int b)
         {
-            if (a <=3 || b <=4)
-            {
-                return 7;
-            }
-            if (a <= 9 || b <= 4) 
+            int sum = a + b;
+            if (sum >= 10 && sum <= 19)
             {
                 return 20;
             }
-            if (a <= 10 || b <= 11)
+            else 
             {
-                return 21;
+                return sum;
             }
-            if (a >= 10 || b <= 19) 
-            {
-                return 20;
-            }
+        }
 
-            return 20;
-
-        }   
-        
         /// <summary>
         /// Given a day of the week encoded as 0=Sun, 1=Mon, 2=Tue, ...6=Sat, and a boolean
         /// indicating if we are on vacation, return a string of the form "7:00" indicating when the
@@ -199,7 +190,33 @@ namespace Exercises.Level1
         /// </summary>
         public bool In1To10(int n, bool outsideMode)
         {
-            throw new NotImplementedException();
+            if (!outsideMode)
+            {
+                if (n <= 10 && n >= 1)
+                {
+                    return true;
+                }
+                return false;
+
+
+            }
+            else
+            {
+                if (n < 1 || n >= 10)
+                {
+                    return true;
+                }
+                return false;
+            }
+
+
+
+            if ((n <= 10 && n >= 1 && !outsideMode) || ((n < 1 || n >= 10) && outsideMode))
+            {
+                return true;
+            }
+            return false;
+
         }
 
         /// <summary>
