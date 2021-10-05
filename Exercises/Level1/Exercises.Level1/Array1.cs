@@ -18,11 +18,11 @@ namespace Exercises.Level1
         /// </summary>
         public bool FirstLast6(int[] nums)
         {
-            int first =  nums[0];
+            int first = nums[0];
             int lastIndex = nums.Length - 1;
             int last = nums[lastIndex];
 
-            if (first == 6 || last == 6) 
+            if (first == 6 || last == 6)
             {
                 return true;
             }
@@ -39,7 +39,7 @@ namespace Exercises.Level1
         /// </summary>
         public bool SameFirstLast(int[] nums)
         {
-            if (nums.Length == 0) 
+            if (nums.Length == 0)
             {
                 return false;
             }
@@ -47,12 +47,12 @@ namespace Exercises.Level1
             int lastIndex = nums.Length - 1;
             int last = nums[lastIndex];
 
-            if (first == last) 
+            if (first == last)
             {
                 return true;
             }
             return false;
-            
+
         }
 
         /// <summary>
@@ -86,14 +86,14 @@ namespace Exercises.Level1
             int lastIndexB = b.Length - 1;
             int lastB = b[lastIndexB];
 
-            
-            if (firstA == firstB || lastA == lastB) 
+
+            if (firstA == firstB || lastA == lastB)
             {
                 return true;
             }
             return false;
 
-            
+
         }
 
         /// <summary>
@@ -105,7 +105,10 @@ namespace Exercises.Level1
         /// </summary>
         public int Sum3(int[] nums)
         {
-            throw new NotImplementedException();
+            int firstsum = nums[0];
+            int lastIndex = nums.Length - 3;
+            int last = nums[lastIndex];
+            return nums[0] + nums[1] + nums[2];
         }
 
         /// <summary>
@@ -118,7 +121,13 @@ namespace Exercises.Level1
         /// </summary>
         public int[] RotateLeft3(int[] nums)
         {
-            throw new NotImplementedException();
+            int[] arrays = new int[3];
+            int lastIndex = nums.Length - 3;
+            int last = nums[lastIndex];
+            arrays[0] = nums[1];
+            arrays[1] = nums[2];
+            arrays[2] = nums[0];
+            return arrays;
         }
 
         /// <summary>
