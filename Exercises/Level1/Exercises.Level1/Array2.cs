@@ -17,7 +17,15 @@ namespace Exercises.Level1
         /// </summary>
         public int CountEvens(int[] nums)
         {
-            throw new NotImplementedException();
+            int sum = 0;
+            foreach (int num in nums)
+            {
+                if (num % 2 == 0)
+                {
+                    sum++;
+                }
+            }
+            return sum;
         }
 
         /// <summary>
@@ -31,7 +39,15 @@ namespace Exercises.Level1
         /// </summary>
         public int BigDiff(int[] nums)
         {
-            throw new NotImplementedException();
+            int min = nums[0];
+            int max = nums[0];
+
+            for (int i = 0; i < nums.Length; i++)
+            {
+                min = Math.Min(min, nums[i]);
+                max = Math.Max(max, nums[i]);
+            }
+            return max - min;
         }
 
         /// <summary>
@@ -47,7 +63,20 @@ namespace Exercises.Level1
         /// </summary>
         public int CenteredAverage(int[] nums)
         {
-            throw new NotImplementedException();
+            int min = nums[0];
+            int max = nums[0];
+            int sumaverage = 0;
+
+            for (int i = 0; i < nums.Length; i++)
+            {
+                sumaverage += nums[i];
+                min = Math.Min(min, nums[i]);
+                max = Math.Max(max, nums[i]);
+            }
+            sumaverage = sumaverage - max - min;
+            sumaverage = sumaverage / (nums.Length - 2);
+
+            return sumaverage;
         }
 
         /// <summary>
@@ -61,7 +90,21 @@ namespace Exercises.Level1
         /// </summary>
         public int Sum13(int[] nums)
         {
-            throw new NotImplementedException();
+            int sum = 0;
+
+            for (int i = 0; i < nums.Length; i++)
+            {
+                if (nums[i] != 13)
+                {
+                    sum += nums[i];
+
+                    if (i > 0 && nums[i - 1] == 13)
+
+                        sum -= nums[i];
+                }
+            }
+            return sum;
+
         }
 
         /// <summary>
@@ -75,7 +118,19 @@ namespace Exercises.Level1
         /// </summary>
         public int Sum67(int[] nums)
         {
-            throw new NotImplementedException();
+            int sum = 0;
+            bool stop = false;
+            for (int i = 0; i < nums.Length; i++)
+            {
+                if (nums[i] == 6)
+                    stop = true;
+                if (stop == false)
+                    sum += nums[i];
+                if (nums[i] == 7 && stop == true)
+                    stop = false;
+            }
+            return sum;
+
         }
 
         /// <summary>
@@ -87,7 +142,19 @@ namespace Exercises.Level1
         /// </summary>
         public bool Has22(int[] nums)
         {
-            throw new NotImplementedException();
+            bool has22 = false;
+            for (int i = 0; i < nums.Length; i++)
+            {
+                if (nums[i] == 2 && i > 0 && nums[i - 1] == 2)
+                {
+                    has22 = true;
+                }
+                if (nums[i] == 2 && i < nums.Length - 1 && nums[i + 1] == 2)
+                {
+                    has22 = true;
+                }
+            }
+            return has22;
         }
 
         /// <summary>
@@ -99,7 +166,13 @@ namespace Exercises.Level1
         /// </summary>
         public bool Lucky13(int[] nums)
         {
-            throw new NotImplementedException();
+            bool lucky = true;
+            for (int i = 0; i < nums.Length; i++)
+            {
+                if (nums[i] == 1 || nums[i] == 3)
+                    lucky = false;
+            }
+            return lucky;
         }
 
         /// <summary>
